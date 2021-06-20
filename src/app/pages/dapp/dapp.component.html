@@ -1,0 +1,96 @@
+<form>
+  <div class="form-row align-items-center">
+
+    <div class="col-auto my-1">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Predict</label>
+      <select class="custom-select mb-2 custom-select-sm" id="inlineFormCustomSelect">
+        <option selected>Asset</option>
+        <option value="1">BTC</option>
+        <option value="2">ETH</option>
+        <option value="3">XTZ</option>
+      </select>
+    </div>
+
+
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">Price</label>
+      <input type="text" class="form-control form-control-sm mb-2" id="inlineFormInput" placeholder="Price in USD">
+    </div>
+
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInput">Duration</label>
+      <input type="text" class="form-control mb-2 form-control-sm" id="inlineFormInput" placeholder="Select time">
+    </div>
+
+
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div> 
+        </div>
+        <input type="text" class="form-control  form-control-sm" id="inlineFormInputGroup" placeholder="Username">
+      </div>
+    </div>
+    
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-2">Predict</button>
+    </div>
+  </div>
+</form>
+
+<table class="table table-sm table-borderless border-0 text-white table-dapp mt-9 mb-9">
+  <caption>My Games</caption>
+  <thead>
+    <tr>
+      <th scope="col" class = "">Game ID</th>
+      <th scope="col">Prediction</th>
+      <th scope="col">Bet</th>
+      <th scope="col">Prize</th>
+      <th scope="col">Status</th>
+      <th scope="col">Claim</th>
+      <th scope="col">Details</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td class = "td-predict">$4434 / ETH<br><small>By 24 July 2021</small> </td>
+      <td class = "td-bet">45 $BAT</td>
+      <td class = "td-prize">45 $BAT</td>
+      <td class = "td-status td-status-won">Won<br><small>45 $BAT</small></td>
+      <td class = "td-claim"><a class="btn btn-xs btn-success">Claim</a></td>
+      <td class = "td-details">
+<span class="text-danger" [ngbPopover]="popContent" [popoverTitle]="popTitle">Details</span>
+        </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td class = "td-predict">$0.23 / CVC<br><small>By 24 July 2021</small> </td>
+      <td class = "td-bet">23 USDT</td>
+      <td class = "td-prize">23 USDT</td>
+      <td class = "td-status td-status-lost">Lost<br><small>23 USDT</small></td>
+      <td class = "td-claim"><a class="btn btn-xs btn-success">Claim</a></td>
+      <td class = "td-details">
+<span class="text-primary" [ngbPopover]="popContent" [popoverTitle]="popTitle">Details</span>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td class = "td-predict">$0.23 / CVC<br><small>By 24 July 2021</small> </td>
+      <td class = "td-bet">100 KUBER</td>
+      <td class = "td-prize">100 KUBER</td>
+      <td class = "td-status td-status-lost">Lost<br><small>100 KUBER</small></td>
+      <td class = "td-claim"><a href = "#" class="btn btn-xs btn-success">Claim</a></td>
+      <td class = "td-details">
+      
+<ng-template #popContent>Hello, <b>{{name}}</b>!</ng-template>
+<ng-template #popTitle>Fancy <b>content!!</b></ng-template>
+<span class="text-info" [ngbPopover]="popContent" [popoverTitle]="popTitle">Details</span>
+
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
