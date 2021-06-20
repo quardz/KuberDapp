@@ -38,8 +38,12 @@
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/js/web3.min.js",
+              "src/assets/js/web3modal.min.js",
+              "src/assets/js/evm-chains.min.js",              
+              "src/assets/js/walletconnect.web3-provider.min.js",              
+              "src/assets/js/fortmatic.js",
             ]
           },
           "configurations": {
