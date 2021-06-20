@@ -3,12 +3,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
- // Unpkg imports
-declare var Web3: any;
-declare var Web3Modal: any;
-declare var WalletConnectProvider: any;
-declare var Fortmatic: any;
-declare var evmChains: any;
 
 //const web3 = window.Web3;
 //const Web3Modal = window.Web3Modal.default;
@@ -42,6 +36,12 @@ export class DappComponent implements OnInit {
 
   }
 
+  public openWallet() {
+    console.log("ASD");
+  } 
+
+  /*
+
   public async openWallet() {
     var _WalletConnectProvider = WalletConnectProvider.default;
     var _Web3Modal = Web3Modal.default;
@@ -68,7 +68,7 @@ export class DappComponent implements OnInit {
 
     
   }
-
+  */
 
   ngOnInit(): void {
 

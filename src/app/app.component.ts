@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { W3Service } from './services/w3.service';
 
 
 @Component({

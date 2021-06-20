@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //import Web3 from "web3";
@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //import WalletLink from "walletlink";
 import Web3 from "web3";
 //import Web3Modal from "web3modal";
+
+import { W3Service } from './services/w3.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,8 +25,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { ConnecterComponent } from './components/connecter/connecter.component';
 
 
+export function W3Provider(w3service: W3Service) {
+  return () => w3service.load();
+}
 
 
 @NgModule({
@@ -35,7 +41,8 @@ import { environment } from '../environments/environment';
     StatsComponent,
     DashboardComponent,
     HomeComponent,
-    DappComponent
+    DappComponent,
+    ConnecterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,10 @@ import { environment } from '../environments/environment';
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [],
+  providers: [
+    W3Service,
+    { provide: APP_INITIALIZER, useFactory: W3Provider, deps: [W3Service], multi: true }        
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
