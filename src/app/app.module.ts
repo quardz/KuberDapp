@@ -1,15 +1,20 @@
 import { APP_INITIALIZER, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-//import Web3 from "web3";
-//import WalletLink from "walletlink";
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { ToastrModule } from 'ngx-toastr';
 
-//import { Web3Modal } from "@mindsorg/web3modal-ts";
-//import WalletLink from "walletlink";
+
+
 import Web3 from "web3";
-//import Web3Modal from "web3modal";
 
 import { W3Service } from './services/w3.service';
+import { W3apiService } from './services/w3api.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +37,11 @@ export function W3Provider(w3service: W3Service) {
   return () => w3service.load();
 }
 
+export function W3apiProvider(w3apiService: W3apiService) {
+  return () => w3apiService.getRemoteDappData();
+}
+
+
 
 @NgModule({
   declarations: [ 
@@ -47,7 +57,13 @@ export function W3Provider(w3service: W3Service) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule, // required animations module    
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,    
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule,
+    ToastrModule.forRoot(), // ToastrModule added 
     NgbModule,
     EffectsModule.forRoot([]),
     StoreModule.forRoot({}, {}),
@@ -55,7 +71,9 @@ export function W3Provider(w3service: W3Service) {
   ],
   providers: [
     W3Service,
-    { provide: APP_INITIALIZER, useFactory: W3Provider, deps: [W3Service], multi: true }        
+    W3apiService,
+    { provide: APP_INITIALIZER, useFactory: W3Provider, deps: [W3Service], multi: true },
+    { provide: APP_INITIALIZER, useFactory: W3apiProvider, deps: [W3apiService], multi: true }        
   ],
   bootstrap: [AppComponent]
 })

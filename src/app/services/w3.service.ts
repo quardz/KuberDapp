@@ -79,6 +79,10 @@ export class W3Service {
     return this._isConnected;
   }
 
+  public getAccount(first = false){
+    return this.accounts;  
+  }
+
   async disconnectAccount() {
     // TODO: Which providers have close method?
     if(this.provider && this.provider.close) {
@@ -90,8 +94,9 @@ export class W3Service {
       // Depending on your use case you may want or want not his behavior.
       await this.dWeb3Modal.clearCachedProvider();
       this.provider = false;
-      this._isConnected = false;
+      
     }
+    this._isConnected = false;
   }
 
 }

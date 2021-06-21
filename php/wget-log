@@ -1,0 +1,54 @@
+Retrying.
+
+--2021-06-21 00:49:16--  (try: 8)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 00:51:34--  (try: 9)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 00:53:52--  (try:10)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 00:56:13--  (try:11)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 00:58:32--  (try:12)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 01:00:51--  (try:13)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:27:28--  (try:14)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:29:48--  (try:15)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:32:07--  (try:16)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:34:26--  (try:17)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:36:46--  (try:18)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:39:05--  (try:19)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Retrying.
+
+--2021-06-21 06:41:24--  (try:20)  http://musaas.quardz.com/api/play-tokens.json
+Connecting to musaas.quardz.com (musaas.quardz.com)|34.69.169.234|:80... failed: Connection timed out.
+Giving up.
+

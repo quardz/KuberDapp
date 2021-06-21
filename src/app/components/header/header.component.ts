@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { W3Service } from '../../services/w3.service';
+import { W3apiService } from '../../services/w3api.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   isConnected = false;
 
   constructor(
-    private w3s: W3Service
+    private w3s: W3Service,
+    private w3api: W3apiService,
     ) { 
     this.isConnected = this.w3s.isConnected();
   }

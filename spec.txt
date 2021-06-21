@@ -1,0 +1,13 @@
+dappData 
+  List of assets to predict with oracal data and live price 
+  List of pool tokens with live balances 
+
+Account data
+  His assets based on enabled assets
+  Balance detail
+  His Games 
+    games
+    oracle data from remote 
+  His NFT from his games 
+
+
