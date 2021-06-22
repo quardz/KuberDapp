@@ -31,6 +31,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ConnecterComponent } from './components/connecter/connecter.component';
+import { DateTimePickerComponent } from './components/date-time-picker/date-time-picker.component';
 
 
 export function W3Provider(w3service: W3Service) {
@@ -52,7 +53,8 @@ export function W3apiProvider(w3apiService: W3apiService) {
     DashboardComponent,
     HomeComponent,
     DappComponent,
-    ConnecterComponent
+    ConnecterComponent,
+    DateTimePickerComponent
   ],
   imports: [
     BrowserModule,

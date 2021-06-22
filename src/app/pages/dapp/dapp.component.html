@@ -1,36 +1,66 @@
 <form #postform = "ngForm" (ngSubmit) = "onClickSubmit(postform.value)" >
   <div class="form-row">
-    <div class="form-group col-auto">
+    <div class="form-group col-auto flex-fill">
       <label for="inputEmail4">I predict</label>
-      <select class="custom-select mb-2 custom-select-sm" id="prediction_asset" name = "prediction_asset" required ngModel>
+      <select class="custom-select mb-2 custom-select-sm border-radius-0" id="prediction_asset" name = "prediction_asset" required ngModel>
         <option selected>Select Asset</option>
         <option value="1">BTC</option>
         <option value="2">ETH</option>
         <option value="3">XTZ</option>
       </select>
-    </div>
+    </div> 
 
-    <div class="form-group col-auto">
-      <label for="inputPassword4">Will reach the price</label>
-            <div class="input-group">
+    <div class="form-group col-auto flex-fill">
+      <label for="prediction_asset">Will reach the price</label>
+            <div class="input-group border-0">
 
-      <input type="text" class="form-control form-control-sm mb-2" id="prediction_price" name = "prediction_price" required ngModel>
-      <select class="custom-select mb-2 custom-select-sm" id="prediction_asset" name = "prediction_asset" required ngModel>
+      <input type="text" class="form-control form-control-sm mb-2 mr-1 border-radius-0" id="prediction_price" name = "prediction_price" required ngModel>
+      <select class="custom-select mb-2 custom-select-sm border-radius-0" id="prediction_asset" name = "prediction_asset" required ngModel>
         <option selected value = 'USD'>USD</option>
         <option value="BNB">BNB</option>
       </select>  
       </div>    
     </div>
 
-    <div class="col-auto">
-      <label class="sr-only" for="inlineFormInput">By</label>
-      <input type="text" class="form-control mb-2 form-control-sm" id="prediction_time" name = "prediction_time" placeholder="Select time">
+    <div class="form-group col-auto flex-fill">
+      <label for="activeEndDate">By the time</label>
+      <app-date-time-picker [(ngModel)]="stringDateModel" name="activeEndDate"></app-date-time-picker>
     </div>
+
+
 
 
   </div>
   
-  <button type="submit" class="btn btn-primary">Predict</button>
+  <div class="form-row">
+    <div class="form-group col-auto flex-fill">
+      <label for="stake_amount">I staking my</label>
+
+      <div class="input-group border-0">
+      <div class="input-group-append ">
+        <button
+          class="btn btn-white btn-calend btn-sm btn-max"
+          type="button"
+        >Max</button>
+      </div> 
+
+      <input type="text" class="form-control form-control-sm mb-2 mr-1 border-radius-0" id="stake_amount" name = "stake_amount" required ngModel>
+      <select class="custom-select mb-2 custom-select-sm border-radius-0" id="stake_asset" name = "stake_asset" required ngModel>
+        <option selected value = 'BAT'>BAT</option>
+        <option value="BNB">BNB</option>
+        <option value="BUSD">BUSD</option>
+      </select>  
+
+      </div>    
+    </div> 
+
+    <div class="form-group col-auto flex-fill">
+
+      <button type="submit" class="btn btn-grad mt-6 border-radius-0">Predict</button>
+    </div>      
+
+  </div>
+  
 </form>
 
 

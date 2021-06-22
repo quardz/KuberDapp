@@ -23548,10 +23548,24 @@ footer.footer {
 }
 
 .btn-grad:hover {
-  font-weight: 400;
+  font-weight: 900;
 }
 
 .fs-4 {
   font-size: 4rem;
 }
 
+.btn-calend {
+  height: 37px !important;
+  color: #ffffff;
+  margin-top: 0px !important;
+} 
+
+.btn-max {
+  height: 36px !important;
+  border-right: 1px solid #dddddd;
+}
+
+.border-radius-0 {
+  border-radius: 0px;
+}

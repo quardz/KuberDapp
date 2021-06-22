@@ -1,0 +1,45 @@
+<div class="input-group border-0">
+  <input
+    [ngClass]="ngControl?.valid ? 'ng-valid' : 'ng-invalid'"
+    class="form-control form-control-sm border-radius-0"
+    (blur)="inputBlur($event)"
+    [ngModel]="dateString | date:inputDatetimeFormat"
+    (change)="onInputChange($event)"
+    [disabled]="disabled"
+  />
+
+  <div class="input-group-append ">
+    <button
+      class="btn btn-white btn-calend btn-sm"
+      [ngbPopover]="calendarContent"
+      [disabled]="disabled"
+      type="button"
+    >📅</button>
+  </div>
+</div>
+
+<ng-template #calendarContent>
+  <div>
+    <div *ngIf="!showTimePickerToggle">
+      <ngb-datepicker id="dp" #dp name="datepicker" [ngModel]="datetime"
+        (ngModelChange)="onDateChange($event, dp)"></ngb-datepicker>
+      <button
+        class="btn btn-block btn-outline-secondary border-radius-0"
+        [disabled]="!datetime?.day"
+        [ngbPopover]="timePickerContent"
+        type="button"
+        (click)="toggleDateTimeState($event)"
+      >
+        
+      </button>
+    </div>
+    
+      
+      <div class="mt-auto">
+        <ngb-timepicker #tp name="timepicker" [ngModel]="datetime" (ngModelChange)="onTimeChange($event)"
+          [seconds]="seconds" [hourStep]="hourStep" [minuteStep]="minuteStep" [secondStep]="secondStep">
+        </ngb-timepicker>
+      </div>
+    
+  </div>
+</ng-template>

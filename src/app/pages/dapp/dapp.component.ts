@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {FormGroup} from '@angular/forms';
-import {FormlyFieldConfig} from '@ngx-formly/core';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidatorFn } from '@angular/forms';
+import { FormlyFieldConfig } from '@ngx-formly/core';
 import { ToastrService } from 'ngx-toastr';
+
 
 
 
@@ -18,27 +19,26 @@ export class DappComponent implements OnInit {
   name = 'World';
 
   form = new FormGroup({});
+
+  dateModel: Date = new Date();
+
+  stringDateModel: string = new Date().toString();
+
   model = { 
     ID: 0,
     prediction_asset: 'USD',
     prediction_price: '',
-    post_url: '',
-    post_author: 1,
-    post_date: '',
-    post_excerpt: '',
-    post_name: '',
-    post_parent: 0,
-    post_status: 0,
-    post_type: '',
-    post_tags: [],
-    _post_categories: [],
-    _post_tags: [],
-    
-
   };
 
 
   fields: FormlyFieldConfig[] = [];
+
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      activeEndDate:  new FormControl(new Date(), {validators: [Validators.required, DateTimeValidator]})
+    }, { updateOn: 'change' });
+  }
+
 
   
 
@@ -60,17 +60,18 @@ export class DappComponent implements OnInit {
 
   onClickSubmit(formdata:any) {
     console.log("formdata", formdata);
-    this.toastr.error("Error", "Nothing to delete, select atleast 1 item.");
+    this.toastr.success("Error", "Its in development.");
 
   }
-
-
-
-  ngOnInit(): void {
-
-
-  }
-
-
-
 }
+
+
+export const DateTimeValidator = (fc: FormControl) => {
+    const date = new Date(fc.value);
+    const isValid = !isNaN(date.valueOf());
+    return isValid ? null : {
+        isValid: {
+            valid: false
+        }
+    };
+};

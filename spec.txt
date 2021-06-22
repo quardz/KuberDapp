@@ -11,3 +11,10 @@ Account data
   His NFT from his games 
 
 
+
+
+------------
+use date/time picker https://stackblitz.com/edit/angular-datetimepicker?file=src%2Fapp%2Fdate-time-picker%2Fdate-time-picker.component.html
+
+@todo 
+contract should check if date is future date
