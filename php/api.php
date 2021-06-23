@@ -29,6 +29,19 @@
     return [12,3,5,6,7];
   }
 
+
+  function _get_account_balance() {
+
+  }
+
+  function _get_account_games() {
+    $output = [];
+    $output[] = [
+
+
+    ];
+  }
+
   function _get_remote_json($url, $field_changes = NULL) {
 
     $string = file_get_contents($url);

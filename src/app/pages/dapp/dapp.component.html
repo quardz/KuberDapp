@@ -91,7 +91,7 @@
 <span class="text-danger" [ngbPopover]="popContent" [popoverTitle]="popTitle">Details</span>
         </td>
     </tr>
-
+ 
     <tr>
       <th scope="row">2</th>
       <td class = "td-predict">$0.23 / CVC<br><small>By 24 July 2021</small> </td>
@@ -114,9 +114,9 @@
       
 <ng-template #popContent>Hello, <b>{{name}}</b>!</ng-template>
 <ng-template #popTitle>Fancy <b>content!!</b></ng-template>
-<span class="text-info" [ngbPopover]="popContent" [popoverTitle]="popTitle">Details</span>
+<span class="text-info" [ngbPopover]="popContent" [popoverTitle]="popTitle" containerClass = "popovergrad">Details</span>
 
-
+ 
       </td>
     </tr>
   </tbody>
